@@ -1,17 +1,29 @@
-import TableRow from "./tableRow";
+import React from "react";
 
-const Table = (props) => {
-  // var heading = props.heading;
-  var body = props.body;
+function Table(props) {
+  console.log(props.user, "pppppppppppp");
   return (
-    <table style={{ width: 500 }}>
-      <tbody>
-        {body.map((row) => (
-          <TableRow row={row} />
+    <div>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>phone</th>
+          <th>email</th>
+        </tr>
+        {props.user.map((item) => (
+          <>
+            {item.map((val) => (
+              <tr>
+                <td>{val.name}</td>
+                <td>{val.phone}</td>
+                <td>{val.email}</td>
+              </tr>
+            ))}
+          </>
         ))}
-      </tbody>
-    </table>
+      </table>
+    </div>
   );
-};
+}
 
 export default Table;

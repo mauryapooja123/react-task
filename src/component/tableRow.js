@@ -1,5 +1,5 @@
 const TableRow = (props) => {
-  var row = props.row;
+  var row = props.user;
   return (
     <tr>
       {row.map((val) => (
